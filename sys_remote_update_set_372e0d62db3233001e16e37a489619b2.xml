@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?><unload unload_date="2019-07-25 07:46:23">
+<sys_remote_update_set action="INSERT_OR_UPDATE">
+<application display_value="Global">global</application>
+<application_name>Global</application_name>
+<application_scope>global</application_scope>
+<application_version/>
+<collisions/>
+<commit_date/>
+<deleted/>
+<description/>
+<inserted/>
+<name>USL_Client_Script_OnLoad</name>
+<origin_sys_id/>
+<parent display_value=""/>
+<release_date/>
+<remote_base_update_set display_value=""/>
+<remote_parent_id/>
+<remote_sys_id>f011abeddbf233001e16e37a48961995</remote_sys_id>
+<state>loaded</state>
+<summary/>
+<sys_class_name>sys_remote_update_set</sys_class_name>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2019-07-25 07:46:23</sys_created_on>
+<sys_id>372e0d62db3233001e16e37a489619b2</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2019-07-25 07:46:23</sys_updated_on>
+<update_set display_value=""/>
+<update_source display_value=""/>
+<updated/>
+</sys_remote_update_set>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_user_role_3ab8b38adb3233001e16e37a48961936</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role"><sys_user_role action="INSERT_OR_UPDATE"><assignable_by/><can_delegate>true</can_delegate><description>Role required for Major Incident Managers</description><elevated_privilege>false</elevated_privilege><grantable>true</grantable><includes_roles/><name>major_inc_mgr</name><requires_subscription>-1</requires_subscription><scoped_admin>false</scoped_admin><suffix/><sys_class_name>sys_user_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2019-07-24 06:55:27</sys_created_on><sys_id>3ab8b38adb3233001e16e37a48961936</sys_id><sys_mod_count>0</sys_mod_count><sys_name>major_inc_mgr</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_user_role_3ab8b38adb3233001e16e37a48961936</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2019-07-24 06:55:27</sys_updated_on></sys_user_role></record_update>]]></payload>
+<payload_hash>-781125009</payload_hash>
+<remote_update_set display_value="USL_Client_Script_OnLoad">372e0d62db3233001e16e37a489619b2</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2019-07-25 07:46:23</sys_created_on>
+<sys_id>3b2e0d62db3233001e16e37a489619b3</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16c22c368570000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2019-07-25 07:46:23</sys_updated_on>
+<table/>
+<target_name>major_inc_mgr</target_name>
+<type>Role</type>
+<update_domain>global</update_domain>
+<update_guid>c0f8f742297233007352db1e0ab6fa83</update_guid>
+<update_guid_history>c0f8f742297233007352db1e0ab6fa83:-781125009</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_script_client_dddf0bfddb3e33001e16e37a489619e8</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;&lt;sys_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;condition/&gt;&lt;description/&gt;&lt;field&gt;category&lt;/field&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;CS_Incident_OnChange&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+   if (isLoading || newValue === '') {
+      return;
+   }
+	g_form.addErrorMessage('error msg');
+	g_form.addInfoMessage('info msg');
+	
+	g_form.addDecoration('number','icon-star','trying to hide this msg');
+	g_form.showErrorBox('number','check valid/invalid incident',true);
+	g_form.getControl('numer').addInfoMessage('info about incident');
+	g_form.hideFieldMsg('number',true);
+	//g_form.hideErrorBox('number');
+	//g_form.hideAllFieldMsgs('error');
+	//alert(g_form.getUniqueValue());
+	//alert(g_form.getTableName());
+	//alert('control is: '+control + ' old value is: '+ oldValue + ' newValue is: '+ newValue + ' isLoading is: '+ //isLoading+ ' isTemplate is: '+isTemplate);
+	//var sections = g_form.getSections();
+	//alert(sections);
+// 	g_form.setSectionDisplay(sections[1],false);
+// 	g_form.setSectionDisplay(sections[2],true);
+// 	g_form.setSectionDisplay(sections[3],false);
+//    if (newValue == '2') {
+//       g_form.setSectionDisplay(sections[1], false);
+//    } else {
+//       g_form.setSectionDisplay(sections[1], true);
+//    }
+// // 	g_form.getReference('caller_id', doAlert); // doAlert is our callback function
+// 	function doAlert(caller) { // reference is passed into callback as first arguments
+//    if (caller.vip === 'true')
+//       alert('Caller is a VIP!');
+//    else
+// 	   alert('caller is not a VIP');
+// 	}
+  // alert('getSectionNames()' +g_form.getSectionNames());
+   
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2019-07-23 09:19:53&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;dddf0bfddb3e33001e16e37a489619e8&lt;/sys_id&gt;&lt;sys_mod_count&gt;34&lt;/sys_mod_count&gt;&lt;sys_name&gt;CS_Incident_OnChange&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_client_dddf0bfddb3e33001e16e37a489619e8&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2019-07-23 11:50:14&lt;/sys_updated_on&gt;&lt;table&gt;incident&lt;/table&gt;&lt;type&gt;onChange&lt;/type&gt;&lt;ui_type&gt;0&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_script_client&gt;&lt;/record_update&gt;</payload>
+<payload_hash>309290264</payload_hash>
+<remote_update_set display_value="USL_Client_Script_OnLoad">372e0d62db3233001e16e37a489619b2</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2019-07-25 07:46:23</sys_created_on>
+<sys_id>772e0d62db3233001e16e37a489619b3</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16c1eaaf0e30000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2019-07-25 07:46:23</sys_updated_on>
+<table>incident</table>
+<target_name>CS_Incident_OnChange</target_name>
+<type>Client Script</type>
+<update_domain>global</update_domain>
+<update_guid>64d2b7b59bbe3300a5e8b4d98a64d320</update_guid>
+<update_guid_history>64d2b7b59bbe3300a5e8b4d98a64d320:309290264,aa9273b5adbe33006ca550efc325c290:392415977,4f6233f1f2be330070ddd1ac7bd99bcf:-1932218551,9ac13b7563be3300807d5ca6e052f5bb:-497838426,8c9177756abe3300ee2004e23fcfba56:-146872954,fc617bbda57e3300daeaff53abf28e0d:430441179,b82173f198be3300e407ddb3df02cf3a:-618173734,f1f0ff35f0be33006a2c265a91a29186:-1446397629,e780f3f14ebe3300c53bdce553d598c0:67843697,8fcd23f16bbe3300cc3f9c6ff8d8b2c6:538786001,c094e37d567e3300cf995033665b523a:-1722309809,f45427b9227e33001360e97dcc1b9902:1134830063,abe3e7b9787e33006cf377998085d1ed:1329111690,c7ef93b9af7e3300c36fb94ebc121110:-508915295,ad2f93b9357e330079fb61b4f3df3a17:38230694,2fee13b9027e3300331729b3102deaeb:-548213024,705e1fb5ca7e33009ac5bd17b5b68a7b:610881210,504e1739f67e3300214a4e7a5f5b7add:1803482674,f11e9f397b7e3300f34dfd33d03ec13c:1273397157,d36ddb75bf7e3300409308b8218b4a6a:1803482674,17fc1739527e3300768843d5ca5a63d5:-98074524,8369d775197e3300d740de5a1639ea4d:956615627,e419d775097e3300a7c657db8d100249:-1294570925,86b897f1837e3300f19c91a996246ba8:2064973481,6f55dfb12a7e3300e36c1edb191df17f:239360427,c205dfb1627e330056bf8f75174c89d4:2096492734,36c4dfb1a97e33002fe4660d527ac17a:43990553,544457b1c37e330065b79f0f6005f54a:-1816331094,8be39b716b7e330090e9d6fe56a62351:1668293223,87731f713d7e3300a68d04a1d40e3ba3:1348581463,44b2db31987e330071c2b0b730d08ca0:-287272897,37029f31667e3300d9f8a815dcd440a7:-97060112,8da19b315e7e33002cdc59f74fb8daa8:1269740286,89e0dfbd3e3e330023dbbb8acbc5963c:1061463809,8660dfbd3d3e33005801100ebc87cf37:-720781967</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_script_client_27e5bbcedb3233001e16e37a4896195a</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;&lt;sys_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;condition/&gt;&lt;description/&gt;&lt;field&gt;active&lt;/field&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;CS_Incident_OnSubmit&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onSubmit() {
+   if(g_form.getValue('impact') == 1 &amp;&amp; g_form.getValue('urgency') == 1 &amp;&amp; !g_user.hasRoleExactly('major_inc_mgr')){
+	   var ans = confirm('Logged in user is : '+ g_user.firstName +'The costumer is notified of all Priority-1 Incidents. Confirm base information is included before submitting this P1 incident.\n\n Select Ok to submit, or Cancel to return to the record.');
+	   if(!ans){
+		   g_form.addInfoMessage('Incident not submitted');
+		   g_form.addInfoMessage('If base information is unavailable, use the "Additional comments" field to document why it is missing');
+		   g_form.showFieldMsg('category','Major Incident base field');
+		   g_form.showFieldMsg('cmdb_ci','Major Incident base field');
+		   g_form.showFieldMsg('assignment_group','Major Incident base field');
+		   g_form.showFieldMsg('short_description','Major Incident base field');
+	   }
+	   return ans;
+   }
+   
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2019-07-24 06:53:24&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;27e5bbcedb3233001e16e37a4896195a&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_name&gt;CS_Incident_OnSubmit&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_client_27e5bbcedb3233001e16e37a4896195a&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2019-07-24 07:16:34&lt;/sys_updated_on&gt;&lt;table&gt;incident&lt;/table&gt;&lt;type&gt;onSubmit&lt;/type&gt;&lt;ui_type&gt;0&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_script_client&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-345599719</payload_hash>
+<remote_update_set display_value="USL_Client_Script_OnLoad">372e0d62db3233001e16e37a489619b2</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2019-07-25 07:46:23</sys_created_on>
+<sys_id>7b2e0d62db3233001e16e37a489619b2</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16c22d6bdc10000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2019-07-25 07:46:23</sys_updated_on>
+<table>incident</table>
+<target_name>CS_Incident_OnSubmit</target_name>
+<type>Client Script</type>
+<update_domain>global</update_domain>
+<update_guid>99cd734699723300f5955ca1e0767853</update_guid>
+<update_guid_history>99cd734699723300f5955ca1e0767853:-345599719,924dbfc23d723300cd2b47d5353027cb:1406890146,8a78738296323300f475d4bf1f2cc10f:-102749651</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_script_client_9fa12761db3633001e16e37a4896193a</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;&lt;sys_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;false&lt;/active&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;condition/&gt;&lt;description/&gt;&lt;field&gt;active&lt;/field&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;CS_incident_OnLoad&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onLoad() {
+	
+	alert('getOption() for impact field is: '+g_form.getOption('impact','2'));
+	//alert('getLabelOf() value of number is: ' + g_form.getLabelOf('number'));
+	g_form.setLabelOf('number','Incident Id');
+	
+	//alert('getIntValue() of impact field is: '+g_form.getIntValue('impact'));
+	
+	// not working alert('getHelpTextControl() value of number: '+g_form.getHelpTextControl('number'));
+// 	alert('getElement() value of impact: '+ g_form.getElement('impact'));
+// 	alert('getFormElement() value of impact : '+g_form.getFormElement('impact'));
+   //Type appropriate comment here, and begin script below
+   //alert('The form has finished loading and is ready for user input');
+	//g_form.flash('category','color-blue',10);
+// 	alert('getDecimalValue() of urgency: '+g_form.getDecimalValue('urgency'));
+// 	alert('getDecimalValue() of number: '+g_form.getDecimalValue('number'));
+// 	alert('getDecimalValue() of caller: '+g_form.getDecimalValue('caller_id'));
+// 	alert('getValue of caller id : '+g_form.getValue('caller_id'));
+// 	alert('getDecimalValue() of category: '+g_form.getDecimalValue('category'));
+// 	alert('getDecimalValue() of business service: '+g_form.getDecimalValue('business_service'));
+// 	alert('getControl() results for assignment group: '+g_form.getControl('assignment_group'));
+// // 	alert('getControl() results for impact field is : '+g_form.getControl('impact'));
+// 	alert('getControl() results for description field is: '+g_form.getControl('description'));
+// 	alert('getControl() results for caller field is : '+g_form.getControl('caller_id'));
+// 	//sys_select is not identifiable here
+// 	//alert('another way to get control of a choice field is : '+sys_select.incident.impact);
+// 	alert('boolean value of impact' + g_form.getBooleanValue('impact'));
+// // 	var action = g_form.getActionName();
+// //    alert('You pressed ' + action);
+// 	g_form.flash('impact',"#FFFACD",4);
+// 	g_form.disableAttachments();
+// 	g_form.enableAttachments();
+// 	g_form.clearOptions('impact');
+// 	g_form.clearValue('priority');
+// 	g_form.addOption('impact', '2.5', '2.5 - Moderately High', 3);
+// 	g_form.addOption('impact', '6', '6 - Really Low');
+// 	g_form.addInfoMessage('The top five fields in this form are mandatory');
+
+// 	g_form.addErrorMessage('This is an error');
+// 	g_form.clearMessages();
+	g_form.addDecoration('description','icon-cart-full','added icon-cart-full through addDecoration','color-green');
+	g_form.addDecoration('description','icon-view','added icon-view through addDecoration','color-blue');
+	g_form.addDecoration('description',' icon-label','added  icon-label through addDecoration','color-red');
+	g_form.addDecoration('description','icon-filter','added icon-filter through addDecoration','color-yellow');
+	g_form.addDecoration('description','icon-calendar','added icon-calendar through addDecoration','color-brown');
+	g_form.addDecoration('description','icon-script','added icon-script through addDecoration','color-grey');
+	g_form.addDecoration('description','icon-add','added icon-add through addDecoration','color-purple');
+	g_form.addDecoration('description','icon-delete','added icon-delete through addDecoration');
+	g_form.addDecoration('description',' icon-help','added  icon-help through addDecoration');
+	g_form.addDecoration('description','icon-info','added icon-info through addDecoration');
+	g_form.addDecoration('description','icon-check-circle','added icon-check-circle through addDecoration');
+	g_form.addDecoration('description','icon-alert','added icon-alert through addDecoration');
+	g_form.addDecoration('description','icon-sort-ascending','added icon-sort-ascending through addDecoration');
+	g_form.addDecoration('description',' icon-console','added  icon-console through addDecoration');
+	g_form.addDecoration('description','icon-list','added icon-list through addDecoration');
+	g_form.addDecoration('description','icon-form','added icon-form through addDecoration');
+	g_form.addDecoration('description','icon-livefeed','added icon-livefeed through addDecoration');
+	g_form.addDecoration('description','icon-tree','added icon-tree through addDecoration');
+	g_form.addDecoration('description','icon-book-open','added icon-book-open through addDecoration');
+	g_form.addDecoration('description','icon-paperclip','added icon-paperclip through addDecoration');
+	g_form.addDecoration('description',' icon-edit','added  icon-edit through addDecoration');
+	g_form.addDecoration('description','icon-trash','added icon-trash through addDecoration');
+	g_form.addDecoration('description','icon-image','added icon-image through addDecoration');
+	g_form.addDecoration('description','icon-search','added icon-search through addDecoration');
+	g_form.addDecoration('description','icon-power','added icon-power through addDecoration');
+	g_form.addDecoration('description','icon-cog','added icon-cog through addDecoration');
+	g_form.addDecoration('description','icon-star','added icon-star through addDecoration');
+	g_form.addDecoration('description',' icon-star-empty','added  icon-star-empty through addDecoration');
+	g_form.addDecoration('description','icon-new-ticket','added icon-new-ticket through addDecoration');
+	g_form.addDecoration('description','icon-dashboard','added icon-dashboard through addDecoration');
+	g_form.addDecoration('caller_id','icon-user','added icon-user through addDecoration');
+	g_form.addDecoration('assignment_group',' icon-user-group','added  icon-user-group through addDecoration');
+	g_form.addDecoration('urgency','icon-lightbulb','added icon-lightbulb through addDecoration');
+	g_form.addDecoration('contact_type','icon-home','added icon-home through addDecoration');
+	g_form.addDecoration('contact_type','icon-mobile','added icon-mobile through addDecoration');
+	g_form.addDecoration('description','icon-comment','added icon-comment through addDecoration');
+	g_form.addDecoration('contact_type','icon-mail','added icon-mail through addDecoration');
+	g_form.addDecoration('priority',' icon-locked','added  icon-locked through addDecoration');
+	g_form.addDecoration('cmdb_ci','icon-database','added icon-database through addDecoration');
+	g_form.addDecoration('description','icon-book','added icon-book through addDecoration');
+	g_form.addDecoration('category','icon-drawer','added icon-drawer through addDecoration');
+	g_form.addDecoration('subcategory','icon-folder','added icon-folder through addDecoration');
+	g_form.addDecoration('business_service','icon-catalog','added icon-catalog through addDecoration');
+	g_form.addDecoration('number','icon-tab','added icon-tab through addDecoration');
+	g_form.addDecoration('business_service','icon-cards','added icon-cards through addDecoration');
+	g_form.addDecoration('assignment_group','icon-tree-right','added icon-tree-right through addDecoration');
+	
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2019-07-22 15:59:26&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;9fa12761db3633001e16e37a4896193a&lt;/sys_id&gt;&lt;sys_mod_count&gt;53&lt;/sys_mod_count&gt;&lt;sys_name&gt;CS_incident_OnLoad&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_client_9fa12761db3633001e16e37a4896193a&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2019-07-23 09:24:30&lt;/sys_updated_on&gt;&lt;table&gt;incident&lt;/table&gt;&lt;type&gt;onLoad&lt;/type&gt;&lt;ui_type&gt;0&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_script_client&gt;&lt;/record_update&gt;</payload>
+<payload_hash>378072509</payload_hash>
+<remote_update_set display_value="USL_Client_Script_OnLoad">372e0d62db3233001e16e37a489619b2</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2019-07-25 07:46:23</sys_created_on>
+<sys_id>b32e0d62db3233001e16e37a489619b3</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16c1e2581400000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2019-07-25 07:46:23</sys_updated_on>
+<table>incident</table>
+<target_name>CS_incident_OnLoad</target_name>
+<type>Client Script</type>
+<update_domain>global</update_domain>
+<update_guid>e1719b315b7e33008e21c1bc38fdc3a5</update_guid>
+<update_guid_history>e1719b315b7e33008e21c1bc38fdc3a5:378072509,f8878b79593e33001e03a72769bec88c:2031674602,de868f794b3e330035f7b77469ad27fb:1575569557,4b568339973e330048c0c9291282d7a6:2031674602,c2164b79913e33009a6719752152647e:-1681885910,26b54779843e33005d275231cb895b38:-649955114,5305cff5673e3300bc9bc1c6c268bc64:1697630235,2bc4cb39a43e33000bc387bde9118705:-1803618231,a4f38339e23e3300b28693412386439e:2017982268,b3c30339963e330065e9a8ad53822a7b:666855548,b0934bf5333e3300fb911a6f4849ce5b:2017982268,a0a0baf9a2fa330018e1d2344af78096:-1720041779,a470f6f17afa3300883e835c0a528e73:-671897427,441072b58efa3300ff3aad5ea18a1fda:532624659,291766b5a7fa33007f8d2c0edc3fce18:533476933,048d9abda0ba3300fd8a746149bc33f0:-255436845,d37cdabd2aba330082c90f01f57da910:-736352681,6afb92bddeba33001b1ff8a783684bb4:-1429018222,b59a1e3da0ba3300e2aed31f9c857c6d:-1959649664,573a56b90fba330054cdd7f67875db44:-993120969,afe992bd6eba3300b8ad0e0e56e544af:-1578491939,eae8da3debba330028935b60b2713b16:1182800872,ad381ef56eba3300f106b0943ca1768c:-1150575450,8aa7da3d9bba3300ad6fc52644f71d11:507540364,80361ef9bfba33003db5842166f49d98:-1710876660,24a59eb50dba330033fba1c20319ca77:1852497388,92d356b94fba3300bb7f8d135bbd933a:71354440,8b939eb562ba33000504f14577c635bd:173225706,ac3e8eb5f7ba33008915677c6050ae6b:-659885842,9fed0ab564ba3300de6dc9cd82ff762a:-534357426,47b73f6d273633008f481f24a0906680:-940064143,a28737edcd363300b5d1a96cb379c50c:1133895921,fa45b76ded3633004cf66ea3fef930f9:-1287351264,2905fb6ded36330081cdb083f21e1a6b:-537733146,49a4b76d93363300140c71a7aaf41bf3:563783061,7b543fe9dc363300b4a6598190bcaebd:-1611776973,da143329113633000d69af12924c9b29:1297359846,6ec33fe9ac363300fe7262c9668d17b9:445024750,0253bb69a7363300d1de9b6f8c15bbb7:-70343768,16223fe9c13633001bbc36a975312785:-1889979245,6fedab293c363300015993d697ca9c1f:-1987855558,327d6b29ba363300f52f384201be40e6:1489108915,57dc2b29f336330039a3822bac4dd33c:567983308,55fbe76513363300e40fe0d111cfb41d:2120152454,fc1ba7e551363300e5dd103d6c88011d:-1694708226,675aef25833633001892e8d0e8530db7:-14539603,8249e3a5cd3633001ba594a778e558b4:808480972,bb48ef25d1363300ce5e995677e9f2b3:-1666659090,fee72365f2363300ab2cbbba92e97121:-1148825698,8e47afa19536330048871869a0364ec1:382498503,09d623a1973633008aa7e19f6c0f227d:-1162108518,b9a623a14636330096ad7a175fc06848:-1256576589,3f53af61d636330054687065dba3716f:503486979,05426361c1363300bd1e8900bd2be36b:91271879</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+</unload>
